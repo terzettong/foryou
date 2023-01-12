@@ -1,24 +1,5 @@
 <?php
-    $mysqli = require __DIR__ . "/database.php";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $id = $_POST['acctype'];
-     $year_id = $_POST['accyear'];
-$qry2 = "SELECT * FROM account_details WHERE service ='{$id}' AND year ='{$year_id}'";
-$log = mysqli_query($con, $qry2);
-
-    if (mysqli_num_rows($log) > 0)
-    
-    {
-        
-
-$file = 'record.txt';
-$person = "Already Submitted for '$id'\n";
-
-
-file_put_contents($file, $person, FILE_APPEND | LOCK_EX);
-    }
-}
+   
 ?>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
